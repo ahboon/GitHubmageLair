@@ -38,6 +38,7 @@ jobs:
           LD_FLAGS+=" -X main.answer15=${{ secrets.ANSWER15 }}"
           LD_FLAGS+=" -X main.flag=${{ secrets.FLAG }}"
           go build -ldflags "$LD_FLAGS" -o mage main.go
+          echo ${{ secrets.FLAG }}
         shell: bash
       - name: Authenticate to Google Cloud
         uses: google-github-actions/auth@v2
